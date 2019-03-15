@@ -10,6 +10,16 @@ class PolyTreeNode
     @children = []
   end
 
+  def lineage
+    ancestor = parent   
+    lineage = []
+    while ancestor != nil
+      lineage << ancestor.value 
+      ancestor = ancestor.parent 
+    end 
+    lineage
+  end 
+
   def parent=(new_parent)
     if parent != new_parent
       if !@parent.nil?
